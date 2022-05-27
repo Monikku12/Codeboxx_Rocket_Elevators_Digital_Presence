@@ -7409,7 +7409,7 @@ section#slider:not(.custom-form) .btn-default {
 
 
 
-/** Portfolio
+/** PortfolioLayout
  **************************************************************** **/
 /* do not move from here - we rewrite this below */
 .item-box-desc h2,
@@ -7430,8 +7430,8 @@ section#slider:not(.custom-form) .btn-default {
 #portfolio {
 	overflow:hidden;
 }
-#portfolio h2,
-#portfolio h3 {
+#portfolioLayout h2,
+#portfolioLayout h3 {
 	font-size:18px;
 	line-height:20px;
 	margin:0;
