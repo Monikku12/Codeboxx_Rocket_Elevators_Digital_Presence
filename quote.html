@@ -170,24 +170,24 @@
 			
 			<!-- Quote FOrm -->
 			
-			<!-- Radio Buttons-->
+			<!-- Building Type Radio Buttons-->
 			<legend>Please select the building type:</legend>
 
 			<ul id="building-type">
-				<li> 
-					<input id='residential' type="radio" name="building-type-radio" value="residential"> Residential</li>
-				<li>					
-					<input id='commercial' type="radio" name="building-type-radio" value="commercial"> Commercial</li>
-				<li>
-					<input id='corporate' type="radio" name="building-type-radio" value="corporate"> Corporate</li>
-				<li>
-					<input id='hybrid' type="radio" name="building-type-radio" value="hybrid"> Hybrid</li>
+				<div> 
+					<input id='residential' type="radio" name="building-type-radio" value="residential"> Residential</div>
+				<div>					
+					<input id='commercial' type="radio" name="building-type-radio" value="commercial"> Commercial</div>
+				<div>
+					<input id='corporate' type="radio" name="building-type-radio" value="corporate"> Corporate</div>
+				<div>
+					<input id='hybrid' type="radio" name="building-type-radio" value="hybrid"> Hybrid</div>
 			</ul>
-			<!-- Radio Buttons -->
+			<!-- Building Type Radio Buttons -->
 
 
 
-			<!-- Fields -->
+			<!-- Building Type Fields -->
 			<div id="number-of-apartments">
 				<label>Number of Apartments</label>
 				<input type="number" name="number-of-apartments" value="1" min="1">
@@ -232,8 +232,50 @@
 				<label>Business Hours (The number of hours of activity of the building per day.)</label>
 				<input type="number" name="business-hours" value="8" max="22">
 			</div>
-			<!-- Fields -->
+			<!-- Building Type Fields -->
 
+
+
+			<!-- Product Line Radio Buttons-->
+			<legend>Please select the product line of your choice:</legend>
+
+			<ul>
+				<div> 
+					<input id='standard' type="radio" name="product-line-radio" value="standard"> Standard</div>
+				<div>					
+					<input id='premium' type="radio" name="product-line-radio" value="premium"> Premium</div>
+				<div>
+					<input id='excelium' type="radio" name="product-line-radio" value="excelium"> Excelium</div>
+			</ul>
+			<!-- Product Line Radio Buttons -->
+
+
+
+			<!-- Results Fields -->
+			<div id="elevator-amount">
+				<label>Number of Distinct Businesses</label>
+				<input type="number" name="elevator-amount" step="0.01" >
+			</div>
+			
+			<div id="elevator-unit-price">
+				<label>Number of Distinct Businesses</label>
+				<input type="number" name="elevator-unit-price" readonly>
+			</div>
+
+			<div id="elevator-total-price">
+				<label>Number of Distinct Businesses</label>
+				<input type="number" name="elevator-total-price" readonly>
+			</div>
+
+			<div id="installation-fees">
+				<label>Number of Distinct Businesses</label>
+				<input type="number" name="installation-fees" readonly>
+			</div>
+
+			<div id="final-price">
+				<label>Number of Distinct Businesses</label>
+				<input type="number" name="final-price" readonly>
+			</div>
 
 
 
@@ -324,6 +366,8 @@
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 
 		<script src="assets/js/scripts.js"></script>
+
+		<script src="assets/js/quote.js"></script>
 
 		<!-- REVOLUTION SLIDER -->
 		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
