@@ -169,117 +169,80 @@
 	
 			
 			<!-- Quote FOrm -->
+			<ul id="building-type" [...]>                    
+				<li [...] >
+					 <a id='residential' [...]>Residential</a>
+				</li>
+				[...]
+		   </ul>
+
+
+
+
+
 			<!-- Radio Buttons-->
-			<div> 
-				<label>
-					<input type="radio" name="residentialRadio" value="residential">Residential</label>
-				<label>
-					<input type="radio" name="commercialRadio" value="commercial">Commercial</label>
-				<label>
-					<input type="radio" name="corporateRadio" value="corporate">Corporate</label>
-				<label>
-					<input type="radio" name="hybridRadio" value="hybrid">Hybrid</label>
-			</div>
+			<legend>Please select the building type:</legend>
+
+			<ul id="building-type" [...]>
+				<li> 
+					<input id='residential' type="radio" name="building-type-radio" value="residential"> Residential</li>
+				<li>					
+					<input id='commercial' type="radio" name="building-type-radio" value="commercial"> Commercial</li>
+				<li>
+					<input id='corporate' type="radio" name="building-type-radio" value="corporate"> Corporate</li>
+				<li>
+					<input id='hybrid' type="radio" name="building-type-radio" value="hybrid"> Hybrid</li>
+			</ul>
 			<!-- Radio Buttons -->
 
 
 
-			<!-- Fields   //  Not done yet -->
+			<!-- Fields -->
 			<div id="number-of-apartments" [...]>
-				<label>N. of Apartments *</label>
-				<input type="residential" name="residentialNumberOfApartments" value=""  [number-of-apartments]>
+				<label>Number of Apartments</label>
+				<input type="number" name="number-of-apartments" value="1" min="1">
 			</div>
 			
 			<div id="number-of-floors" [...]>
-				<label>N. of Floors *</label>
-				<input type="residential" name="residentialNumberOfFloors"  [number-of-apartments]>
+				<label>Number of Floors (excluding basements)</label>
+				<input type="number" name="number-of-floors" value="2" min="2">
 			</div>
 		
 			<div id="number-of-basements" [...]>
-				<label>N. of Basements *</label>
-				<input type="residential" name="residentialNumberOfBasements"  [number-of-apartments]>
+				<label>Number of Basements</label>
+				<input type="number" name="number-of-basements" value="0" min="0">
 			</div>
 		
-			<div id="number-of-floors" [...]>
-				<label>N. of Floors *</label>
-				<input type="commercial" name="commercialNumberOfFloors"  [number-of-apartments]>
-			</div>
-			
-			<div id="number-of-basements" [...]>
-				<label>N. of Basements *</label>
-				<input type="commercial" name="commercialNumberOFBasements"  [number-of-apartments]>
-			</div>
-			
 			<div id="number-of-companies" [...]>
-				<label>N. of Companies *</label>
-				<input type="commercial" name="commercialNumberOfCompanies"  [number-of-apartments]>
+				<label>Number of Separate Tenant Companies</label>
+				<input type="number" name="number-of-companies" value="1" min="1">
 			</div>
 			
 			<div id="number-of-parking-spots" [...]>
-				<label>N. of Parking Spots *</label>
-				<input type="commercial" name="commercialNumberOfParkingSpots"  [number-of-apartments]>
+				<label>Number of Parking Spaces Available</label>
+				<input type="number" name="number-of-parking-spots" value="1" min="1">
 			</div>
 			
 			<div id="number-of-elevators" [...]>
-				<label>N. of Elevators</label>
-				<input type="commercial" name="commercialNumberOfElevators"  [number-of-apartments]>
-			</div>
-			
-			<div id="number-of-floors" [...]>
-				<label>N. of Floors *</label>
-				<input type="corporate" name="corporateNumberOfFloors"  [number-of-apartments]>
-			</div>
-			
-			<div id="number-of-basements" [...]>
-				<label>N. of Basements *</label>
-				<input type="corporate" name="corporateNumberOfBasements"  [number-of-apartments]>
-			</div>
-			
-			<div id="number-of-parking-spots" [...]>
-				<label>N. of Parking Spots *</label>
-				<input type="corporate" name="corporateNumberOfParkingSpots" [number-of-apartments]>
+				<label>Number of Elevator Cages To Be Deployed</label>
+				<input type="number" name="number-of-elevators" value="1" min="1">
 			</div>
 			
 			<div id="number-of-corporations" [...]>
-				<label>N. of Corporations *</label>
-				<input type="corporate" name="corporateNumberOfCorporations"  [number-of-apartments]>
+				<label>Number of Distinct Businesses</label>
+				<input type="number" name="number-of-corporations" value="1" min="1">
 			</div>
 			
 			<div id="maximum-occupancy" [...]>
-				<label>Maximum Occupancy</label>
-				<input type="corporate" name="corporateMaximumOccupancy"  [number-of-apartments]>
-			</div>
-			
-			<div id="number-of-floors" [...]>
-				<label>N. of Floors *</label>
-				<input type="hybrid" name="hybridNumberOfFloors"  [number-of-apartments]>
-			</div>
-			
-			<div id="number-of-basements" [...]>
-				<label>N. of Basements *</label>
-				<input type="hybrid" name="hybridNumberOfBasements"  [number-of-apartments]>
-			</div>
-			
-			<div id="number-of-companies" [...]>
-				<label>N. of Companies *</label>
-				<input type="hybrid" name="hybridNumberOfCompanies"  [number-of-apartments]>
-			</div>
-			
-			<div id="number-of-parking-spots" [...]>
-				<label>N. of Parking Spots *</label>
-				<input type="hybrid" name="hybridNumberOfParkingSpots"  [number-of-apartments]>
-			</div>
-			
-			<div id="number-of-maximum-occupancy" [...]>
-				<label>Maximum Occupancy</label>
-				<input type="hybrid" name="hybridMaximumOccupancy"  [number-of-apartments]>
+				<label>Maximum Number of Occupants Per Floor</label>
+				<input type="number" name="maximum-occupancy" value="1" min="1">
 			</div>
 			
 			<div id="business-hours" [...]>
-				<label>Business Hours</label>
-				<input type="hybrid" name="hybridBusinessHours"  [number-of-apartments]>
+				<label>Business Hours (The number of hours of activity of the building per day.)</label>
+				<input type="number" name="business-hours" value="8" max="22">
 			</div>
-			<!-- Fields   //  Not done yet -->
+			<!-- Fields -->
 
 
 
