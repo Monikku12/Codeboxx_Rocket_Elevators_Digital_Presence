@@ -27,6 +27,15 @@
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/color_scheme/darkblue.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+		<!-- RESULTS FIELDS SCRIPTS	-->
+		<!-- <script> 
+		function commaFormat(Nbre) {
+			// Section avant le point à corriger.
+			return Nbre.toLocaleString('en', { style: 'currency', currency: 'USD' });
+			} 
+		</script>        -->
+		
 	</head>
 
 	<!--
@@ -190,47 +199,47 @@
 			<!-- Building Type Fields -->
 			<div id="number-of-apartments">
 				<label>Number of Apartments</label>
-				<input type="number" name="number-of-apartments" value="1" min="1">
+				<input type="number" name="number-of-apartments" step="1" min="1" value="">				
 			</div>
 			
 			<div id="number-of-floors">
 				<label>Number of Floors (excluding basements)</label>
-				<input type="number" name="number-of-floors" value="2" min="2">
+				<input type="number" name="number-of-floors" step="1" min="2">
 			</div>
 		
 			<div id="number-of-basements">
 				<label>Number of Basements</label>
-				<input type="number" name="number-of-basements" value="0" min="0">
+				<input type="number" name="number-of-basements" step="1" min="0">
 			</div>
 		
 			<div id="number-of-companies">
 				<label>Number of Separate Tenant Companies</label>
-				<input type="number" name="number-of-companies" value="1" min="1">
+				<input type="number" name="number-of-companies" step="1" min="1">
 			</div>
 			
 			<div id="number-of-parking-spots">
 				<label>Number of Parking Spaces Available</label>
-				<input type="number" name="number-of-parking-spots" value="1" min="1">
+				<input type="number" name="number-of-parking-spots" step="1" min="1">
 			</div>
 			
 			<div id="number-of-elevators">
 				<label>Number of Elevator Cages To Be Deployed</label>
-				<input type="number" name="number-of-elevators" value="1" min="1">
+				<input type="number" name="number-of-elevators" step="1" min="1">
 			</div>
 			
 			<div id="number-of-corporations">
 				<label>Number of Distinct Businesses</label>
-				<input type="number" name="number-of-corporations" value="1" min="1">
+				<input type="number" name="number-of-corporations" step="1" min="1">
 			</div>
 			
 			<div id="maximum-occupancy">
 				<label>Maximum Number of Occupants Per Floor</label>
-				<input type="number" name="maximum-occupancy" value="1" min="1">
+				<input type="number" name="maximum-occupancy" step="1" min="1">
 			</div>
 			
 			<div id="business-hours">
 				<label>Business Hours (The number of hours of activity of the building per day.)</label>
-				<input type="number" name="business-hours" value="8" max="22">
+				<input type="number" name="business-hours" step="1" max="24">
 			</div>
 			<!-- Building Type Fields -->
 
@@ -251,32 +260,32 @@
 
 
 
-			<!-- Results Fields -->
+			<!-- Results Fields --> <!-- ↓↓↓　À modifier plus tard pour le format ↓↓↓ (onchange="JavaScript:commaFormat(this.value)") (value="200200") -->
 			<div id="elevator-amount">
-				<label>Number of Distinct Businesses</label>
-				<input type="number" name="elevator-amount" step="0.01" >
+				<label for = "elevator-amount">Amount of Elevators Needed</label>
+				<input type="number" name="results-fields" step="1" readonly>
 			</div>
 			
 			<div id="elevator-unit-price">
-				<label>Number of Distinct Businesses</label>
-				<input type="number" name="elevator-unit-price" readonly>
+				<label>Unit Price of Each Elevator</label>
+				<input type="number" name="results-fields" step="0.01" readonly>
 			</div>
 
 			<div id="elevator-total-price">
-				<label>Number of Distinct Businesses</label>
-				<input type="number" name="elevator-total-price" readonly>
+				<label>Total Price of the Elevators</label>
+				<input type="number" name="results-fields" step="0.01" readonly>
 			</div>
 
 			<div id="installation-fees">
-				<label>Number of Distinct Businesses</label>
-				<input type="number" name="installation-fees" readonly>
+				<label>Installation Fees</label>
+				<input type="number" name="results-fields" step="0.01" readonly>
 			</div>
 
 			<div id="final-price">
-				<label>Number of Distinct Businesses</label>
-				<input type="number" name="final-price" readonly>
+				<label>Final Price</label>
+				<input type="number" name="results-fields" step="0.01" readonly>
 			</div>
-
+			<!-- Results Fields -->
 
 
 
@@ -376,35 +385,5 @@
 
 		<!-- PAGELEVEL SCRIPTS -->
 		<script src="assets/js/contact.js"></script>
-
-		<!-- 
-			GMAP.JS 
-			http://hpneo.github.io/gmaps/
-		-->
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
-		<script src="assets/plugins/gmaps.js"></script>
-		<script>
-
-			jQuery(document).ready(function(){
-
-				/**
-					@BASIC GOOGLE MAP
-				**/
-				var map2 = new GMaps({
-					div: '#map2',
-					lat: 46.8356601,
-					lng: -71.2918385,
-					scrollwheel: false
-				});
-
-				var marker = map2.addMarker({
-					lat: 46.8356601,
-					lng: -71.2918385,
-					title: 'Company, Inc.'
-				});
-
-			});
-
-		</script>
 	</body>
 </html>
