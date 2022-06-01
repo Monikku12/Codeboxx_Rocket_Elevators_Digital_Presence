@@ -2,7 +2,7 @@
 *************************************************** **/
 
 // BUILDING TYPES FUNCTIONS --------------------------------
-$(function() { // Link fields with radio buttons
+$(function() { // Link Fields With Radio Buttons
     $("input[name='building-type-radio']").click(function() {
       if ($("#residential").is(":checked")) {
         $("#number-of-apartments").show();
@@ -87,16 +87,17 @@ $(function() { // Link fields with radio buttons
 
     
 // ESTIMATE CALCULATION FUNCTIONS 
-//     Variables definitions
-    // var elevatorAmount = $("#elevator-amount").val()
-    // var elevatorUnitPrice = $("#elevator-unit-price").val()
-    // var elevatorTotalPrice = $("#elevator-total-price").val()
-    // var installationFees = $("#installation-fees").val()
-    // var finalPrice = $("#final-price").val()
+    // Variables Definitions
+    // var elevatorAmount = $("input[name=elevator-amount]").val()
+    // var elevatorUnitPrice = $("input[name=elevator-unit-price]").val()
+    // var elevatorTotalPrice = $("input[name=elevator-total-price]").val()
+    // var installationFees = $("input[name=installation-fees]").val()
+    // var finalPrice = $("input[name=final-price]").val()
 
-    // console.log("elevatorAmount is:", elevatorAmount);
-    // console.log("elevatorUnitPrice is:", elevatorUnitPrice);
-    
+    // Commercial Elevator Cages Calculation
+    // $("input[name='building-type-radio']").click(function() {
+    //      if ($("#commercial").is(":checked")) { 
+    //     commercialElevatorAmount = numberOfElevators;
 
 
 
@@ -108,3 +109,13 @@ $(function() { // Link fields with radio buttons
 //     }
 //             });
 //         })
+
+
+// PRODUCTS LINE FUNCTIONS --------------------------------
+$(function() { // Link Fields With Radio Buttons
+    $("input[name='product-line-radio']").click(function() {
+      if ($("#standard").is(":checked")) {
+            $("#elevator-unit-price").show(val(7565));
+    }
+})
+});
