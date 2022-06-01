@@ -2,49 +2,8 @@
 *************************************************** **/
 
 // BUILDING TYPES FUNCTIONS --------------------------------
-$(function() { // Link Fields With Radio Buttons
+$(function() { // Link Fields With Radio Buttons   
     $("input[name='building-type-radio']").click(function() {
-      if ($("#residential").is(":checked")) {
-        $("#number-of-apartments").show();
-        $("#number-of-floors").show();
-        $("#number-of-basements").show();
-        $("#number-of-companies").hide();
-        $("#number-of-parking-spots").hide();
-        $("#number-of-elevators").hide();
-        $("#number-of-corporations").hide();
-        $("#maximum-occupancy").hide();
-        $("#business-hours").hide();
-    } if ($("#commercial").is(":checked")) {
-        $("#number-of-companies").show();
-        $("#number-of-floors").show();
-        $("#number-of-basements").show();
-        $("#number-of-parking-spots").show();
-        $("#number-of-elevators").show();
-        $("#number-of-apartments").hide();
-        $("#number-of-corporations").hide();
-        $("#maximum-occupancy").hide();
-        $("#business-hours").hide();
-    } if ($("#corporate").is(":checked")) {
-        $("#number-of-corporations").show();
-        $("#number-of-floors").show();
-        $("#number-of-basements").show();
-        $("#number-of-parking-spots").show();
-        $("#maximum-occupancy").show();
-        $("#number-of-apartments").hide();
-        $("#number-of-companies").hide();
-        $("#number-of-elevators").hide();
-        $("#business-hours").hide();
-    } if ($("#hybrid").is(":checked")) {
-        $("#number-of-companies").show();
-        $("#number-of-floors").show();
-        $("#number-of-basements").show();
-        $("#number-of-parking-spots").show();
-        $("#maximum-occupancy").show();
-        $("#business-hours").show();
-        $("#number-of-corporations").hide();
-        $("#number-of-elevators").hide();
-        $("#number-of-apartments").hide();        
-    }});
         $("#number-of-apartments").change(function(){ // Retrieve data from quote form
             var numberOfApartments = $("input[name=number-of-apartments]").val();
             console.log("number-of-apartments is:", numberOfApartments);         
@@ -81,6 +40,49 @@ $(function() { // Link Fields With Radio Buttons
             var businessHours = $("input[name=business-hours]").val();           
             console.log("business-hours is:", businessHours);
         });
+      if ($("#residential").is(":checked")) {
+        $("#number-of-apartments").show();
+        $("#number-of-floors").show();
+        $("#number-of-basements").show();
+        $("#number-of-companies").hide();
+        $("#number-of-parking-spots").hide();
+        $("#number-of-elevators").hide();
+        $("#number-of-corporations").hide();
+        $("#maximum-occupancy").hide();
+        $("#business-hours").hide();
+    } if ($("#commercial").is(":checked")) {
+        $("#number-of-companies").show();
+        $("#number-of-floors").show();
+        $("#number-of-basements").show();
+        $("#number-of-parking-spots").show();
+        $("#number-of-elevators").show();
+        $("#number-of-apartments").hide();
+        $("#number-of-corporations").hide();
+        $("#maximum-occupancy").hide();
+        $("#business-hours").hide();
+        $("output[name=elevator-amount]").val(numberOfElevators);
+        console.log(elevator-amount);
+    } if ($("#corporate").is(":checked")) {
+        $("#number-of-corporations").show();
+        $("#number-of-floors").show();
+        $("#number-of-basements").show();
+        $("#number-of-parking-spots").show();
+        $("#maximum-occupancy").show();
+        $("#number-of-apartments").hide();
+        $("#number-of-companies").hide();
+        $("#number-of-elevators").hide();
+        $("#business-hours").hide();
+    } if ($("#hybrid").is(":checked")) {
+        $("#number-of-companies").show();
+        $("#number-of-floors").show();
+        $("#number-of-basements").show();
+        $("#number-of-parking-spots").show();
+        $("#maximum-occupancy").show();
+        $("#business-hours").show();
+        $("#number-of-corporations").hide();
+        $("#number-of-elevators").hide();
+        $("#number-of-apartments").hide();        
+    }});       
         })
 
         
@@ -94,28 +96,20 @@ $(function() { // Link Fields With Radio Buttons
     // var installationFees = $("input[name=installation-fees]").val()
     // var finalPrice = $("input[name=final-price]").val()
 
-    // Commercial Elevator Cages Calculation
-    // $("input[name='building-type-radio']").click(function() {
-    //      if ($("#commercial").is(":checked")) { 
-    //     commercialElevatorAmount = numberOfElevators;
-
-
-
-
-// $(function() {
-//     $("input[name='building-type-radio']").click(function() {
-//       if ($("#commercial").is(":checked")) { 
-//         $"#number-of-elevators" = elevatorAmount;
-//     }
-//             });
-//         })
-
 
 // PRODUCTS LINE FUNCTIONS --------------------------------
-$(function() { // Link Fields With Radio Buttons
+$(function() { // Elevator Unit Price & Installation Fees --------------------------------
     $("input[name='product-line-radio']").click(function() {
       if ($("#standard").is(":checked")) {
-            $("#elevator-unit-price").show(val(7565));
+        var elevatorUnitPrice = $("output[name=elevator-unit-price]").val(7565);
+        var installationFeesPercentage = $("output[name=installation-fees]").val(0.1);
+    } if ($("#premium").is(":checked")) {
+        var elevatorUnitPrice = $("output[name=elevator-unit-price]").val(12345);
+        var installationFeesPercentage = $("output[name=installation-fees]").val(0.13);           
+    } if ($("#excelium").is(":checked")) {
+        var elevatorUnitPrice = $("output[name=elevator-unit-price]").val(15400);
+        var installationFeesPercentage = $("output[name=installation-fees]").val(0.16);           
     }
 })
 });
+
