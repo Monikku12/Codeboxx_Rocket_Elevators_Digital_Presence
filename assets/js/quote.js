@@ -2,58 +2,61 @@
 *************************************************** **/
 
 // BUILDING TYPES FUNCTIONS --------------------------------
-$(function() { // Link Fields With Radio Buttons
-    var numberOfApartments
-    var numberOfBasements
-    var numberOfCompanies
-    var numberOfCorporations
-    var numberOfElevators
-    var numberOfFloors
-    var numberOfParkingSpots
-    var maximumOccupancy
-    var businessHours
-    var totalNumberOfOccupants
-    $("#number-of-apartments").change(function(){ // Retrieve data from quote form
+$(function() { // ←←← Link Fields With Radio Buttons
+    var numberOfApartments = 0;
+    var numberOfBasements = 0;
+    var numberOfCompanies = 0;
+    var numberOfCorporations = 0;
+    var numberOfElevators = 0;
+    var numberOfFloors = 0;
+    var numberOfParkingSpots = 0;
+    var maximumOccupancy = 0;
+    var businessHours = 0;
+    var numberTotalOfFloors = 0;
+    var totalNumberOfOccupants = 0;
+    var numberOfElevatorColumns = 0;
+    // Retrieve value from quote form ↓↓↓
+    $("#number-of-apartments").keyup(function(){ 
         numberOfApartments = $("input[name=number-of-apartments]").val();
         console.log("number-of-apartments is:", numberOfApartments);         
     });
-    $("#number-of-floors").change(function(){            
+    $("#number-of-floors").keyup(function(){            
         numberOfFloors = $("input[name=number-of-floors]").val();
-        console.log("number-of-floors is:", numberOfFloors);
+        console.log("number-of-floors is:", numberOfFloors); // OK
     });
-    $("#number-of-basements").change(function(){            
+    $("#number-of-basements").keyup(function(){            
         numberOfBasements = $("input[name=number-of-basements]").val();
         console.log("number-of-basements is:", numberOfBasements); // OK
         console.log("numberOfBasements is:", numberOfBasements) // OK
     });
-    $("#number-of-companies").change(function(){            
+    $("#number-of-companies").keyup(function(){            
         numberOfCompanies = $("input[name=number-of-companies]").val();
-        console.log("number-of-companies is:", numberOfCompanies);  
+        console.log("number-of-companies is:", numberOfCompanies); // OK
     });
-    $("#number-of-parking-spots").change(function(){            
+    $("#number-of-parking-spots").keyup(function(){            
         numberOfParkingSpots = $("input[name=number-of-parking-spots]").val();
         console.log("number-of-parking-spots is:", numberOfParkingSpots);
     });
-    $("#number-of-elevators").change(function(){  // Done         
+    $("#number-of-elevators").keyup(function(){  // Done         
         $("output[name=elevator-amount]").val($("input[name=number-of-elevators]").val());
     });       
-    $("#number-of-corporations").change(function(){            
+    $("#number-of-corporations").keyup(function(){            
         numberOfCorporations = $("input[name=number-of-corporations]").val();
         console.log("number-of-corporations is:", numberOfCorporations);
     });
-    $("#maximum-occupancy").change(function(){            
+    $("#maximum-occupancy").keyup(function(){            
         maximumOccupancy = $("input[name=maximum-occupancy]").val();
         console.log("maximum-occupancy is:", maximumOccupancy);
     });
-    $("#business-hours").change(function(){            
+    $("#business-hours").keyup(function(){            
         businessHours = $("input[name=business-hours]").val();           
         console.log("business-hours is:", businessHours);
     });
-    var totalNumberOfOccupants = numberOfCompanies * (numberOfFloors + numberOfBasements);
-        console.log("totalNumberOfOccupants is:", totalNumberOfOccupants);
-        console.log("numberOfCompanies is:", numberOfCompanies);
-        console.log("numberOfFloors is:", numberOfFloors);
-        console.log("numberOfBasements is:", numberOfBasements);   
+    $("#number-of-floors","#number-of-basements").keyup(function(){
+        numberTotalOfFloors = +numberOfFloors + +numberOfBasements;
+        console.log("numberTotalOfFloors is:", numberTotalOfFloors);
+    });
+       // Radio buttons Effects ↓↓↓
     $("input[name='building-type-radio']").click(function() {
       if ($("#residential").is(":checked")) {
         $("#number-of-apartments").show();
@@ -94,13 +97,21 @@ $(function() { // Link Fields With Radio Buttons
         $("#business-hours").show();
         $("#number-of-corporations").hide();
         $("#number-of-elevators").hide();
-        $("#number-of-apartments").hide(); 
-        // // totalNumberOfOccupants = numberOfCompanies * ( 
-        //     var totalNumberOfOccupants = numberOfFloors + numberOfBasements
-        // console.log("totalNumberOfOccupants is:", totalNumberOfOccupants);
-        // console.log("numberOfCompanies is:", numberOfCompanies);
-        // console.log("numberOfFloors is:", numberOfFloors);
-        // console.log("numberOfBasements is:", numberOfBasements);   
+        $("#number-of-apartments").hide();
+        $("input").keyup(function(){ // Hybrid & Corporate Calculations
+            totalNumberOfOccupants = numberTotalOfFloors * numberOfCompanies;
+                console.log("numberOfCompanies in formula is:", numberOfCompanies);
+                console.log("numberTotalOfFloors in formula is:", numberTotalOfFloors);
+                console.log("totalNumberOfOccupants in formula is:", totalNumberOfOccupants);
+            numberOfElevators = totalNumberOfOccupants / 1000;
+                console.log("numberOfElevators in formula is:", numberOfElevators);
+            $("output[name=elevator-amount]").val(numberOfElevators);
+                console.log("numberOfElevators in field is:", numberOfElevators);
+            numberOfElevatorColumns = numberTotalOfFloors / 20;
+                console.log("numberOfElevatorColumns in formula is:", numberOfElevatorColumns);
+        
+        
+            });        
     }});       
         })
 
