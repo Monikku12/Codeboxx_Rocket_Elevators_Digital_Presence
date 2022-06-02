@@ -2,44 +2,59 @@
 *************************************************** **/
 
 // BUILDING TYPES FUNCTIONS --------------------------------
-$(function() { // Link Fields With Radio Buttons   
+$(function() { // Link Fields With Radio Buttons
+    var numberOfApartments
+    var numberOfBasements
+    var numberOfCompanies
+    var numberOfCorporations
+    var numberOfElevators
+    var numberOfFloors
+    var numberOfParkingSpots
+    var maximumOccupancy
+    var businessHours
+    var totalNumberOfOccupants
+    $("#number-of-apartments").change(function(){ // Retrieve data from quote form
+        numberOfApartments = $("input[name=number-of-apartments]").val();
+        console.log("number-of-apartments is:", numberOfApartments);         
+    });
+    $("#number-of-floors").change(function(){            
+        numberOfFloors = $("input[name=number-of-floors]").val();
+        console.log("number-of-floors is:", numberOfFloors);
+    });
+    $("#number-of-basements").change(function(){            
+        numberOfBasements = $("input[name=number-of-basements]").val();
+        console.log("number-of-basements is:", numberOfBasements); // OK
+        console.log("numberOfBasements is:", numberOfBasements) // OK
+    });
+    $("#number-of-companies").change(function(){            
+        numberOfCompanies = $("input[name=number-of-companies]").val();
+        console.log("number-of-companies is:", numberOfCompanies);  
+    });
+    $("#number-of-parking-spots").change(function(){            
+        numberOfParkingSpots = $("input[name=number-of-parking-spots]").val();
+        console.log("number-of-parking-spots is:", numberOfParkingSpots);
+    });
+    $("#number-of-elevators").change(function(){  // Done         
+        $("output[name=elevator-amount]").val($("input[name=number-of-elevators]").val());
+    });       
+    $("#number-of-corporations").change(function(){            
+        numberOfCorporations = $("input[name=number-of-corporations]").val();
+        console.log("number-of-corporations is:", numberOfCorporations);
+    });
+    $("#maximum-occupancy").change(function(){            
+        maximumOccupancy = $("input[name=maximum-occupancy]").val();
+        console.log("maximum-occupancy is:", maximumOccupancy);
+    });
+    $("#business-hours").change(function(){            
+        businessHours = $("input[name=business-hours]").val();           
+        console.log("business-hours is:", businessHours);
+    });
+    var totalNumberOfOccupants = numberOfCompanies * (numberOfFloors + numberOfBasements);
+        console.log("totalNumberOfOccupants is:", totalNumberOfOccupants);
+        console.log("numberOfCompanies is:", numberOfCompanies);
+        console.log("numberOfFloors is:", numberOfFloors);
+        console.log("numberOfBasements is:", numberOfBasements);   
     $("input[name='building-type-radio']").click(function() {
-        $("#number-of-apartments").change(function(){ // Retrieve data from quote form
-            var numberOfApartments = $("input[name=number-of-apartments]").val();
-            console.log("number-of-apartments is:", numberOfApartments);         
-        });
-        $("#number-of-floors").change(function(){            
-            var numberOfFloors = $("input[name=number-of-floors]").val();
-            console.log("number-of-floors is:", numberOfFloors);
-        });
-        $("#number-of-basements").change(function(){            
-            var numberOfBasements = $("input[name=number-of-basements]").val();
-            console.log("number-of-basements is:", numberOfBasements);
-        });
-        $("#number-of-companies").change(function(){            
-            var numberOfCompanies = $("input[name=number-of-companies]").val();
-            console.log("number-of-companies is:", numberOfCompanies);  
-        });
-        $("#number-of-parking-spots").change(function(){            
-            var numberOfParkingSpots = $("input[name=number-of-parking-spots]").val();
-            console.log("number-of-parking-spots is:", numberOfParkingSpots);
-        });
-        $("#number-of-elevators").change(function(){            
-            var numberOfElevators = $("input[name=number-of-elevators]").val();
-            console.log("number-of-elevators is:", numberOfElevators);
-        });
-        $("#number-of-corporations").change(function(){            
-            var numberOfCorporations = $("input[name=number-of-corporations]").val();
-            console.log("number-of-corporations is:", numberOfCorporations);
-        });
-        $("#maximum-occupancy").change(function(){            
-            var maximumOccupancy = $("input[name=maximum-occupancy]").val();
-            console.log("maximum-occupancy is:", maximumOccupancy);
-        });
-        $("#business-hours").change(function(){            
-            var businessHours = $("input[name=business-hours]").val();           
-            console.log("business-hours is:", businessHours);
-        });
       if ($("#residential").is(":checked")) {
         $("#number-of-apartments").show();
         $("#number-of-floors").show();
@@ -60,8 +75,6 @@ $(function() { // Link Fields With Radio Buttons
         $("#number-of-corporations").hide();
         $("#maximum-occupancy").hide();
         $("#business-hours").hide();
-        $("output[name=elevator-amount]").val(numberOfElevators);
-        console.log(elevator-amount);
     } if ($("#corporate").is(":checked")) {
         $("#number-of-corporations").show();
         $("#number-of-floors").show();
@@ -81,7 +94,13 @@ $(function() { // Link Fields With Radio Buttons
         $("#business-hours").show();
         $("#number-of-corporations").hide();
         $("#number-of-elevators").hide();
-        $("#number-of-apartments").hide();        
+        $("#number-of-apartments").hide(); 
+        // // totalNumberOfOccupants = numberOfCompanies * ( 
+        //     var totalNumberOfOccupants = numberOfFloors + numberOfBasements
+        // console.log("totalNumberOfOccupants is:", totalNumberOfOccupants);
+        // console.log("numberOfCompanies is:", numberOfCompanies);
+        // console.log("numberOfFloors is:", numberOfFloors);
+        // console.log("numberOfBasements is:", numberOfBasements);   
     }});       
         })
 
@@ -95,6 +114,8 @@ $(function() { // Link Fields With Radio Buttons
     // var elevatorTotalPrice = $("input[name=elevator-total-price]").val()
     // var installationFees = $("input[name=installation-fees]").val()
     // var finalPrice = $("input[name=final-price]").val()
+
+
 
 
 // PRODUCTS LINE FUNCTIONS --------------------------------
@@ -112,4 +133,3 @@ $(function() { // Elevator Unit Price & Installation Fees ----------------------
     }
 })
 });
-
