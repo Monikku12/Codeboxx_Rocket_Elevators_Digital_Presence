@@ -9,8 +9,6 @@ $(function() { // ←←← Link Fields With Radio Buttons
     var numberOfCorporations = 0;
     var numberOfElevators = 0;
     var numberOfFloors = 0;
-    var maximumOccupancy = 0;
-    var businessHours = 0;
     var numberTotalOfFloors = 0;
     var totalNumberOfOccupants = 0;
     var numberOfColumns = 0;
@@ -79,7 +77,7 @@ $(function() { // ←←← Link Fields With Radio Buttons
         $("#number-of-corporations").hide();
         $("#maximum-occupancy").hide();
         $("#business-hours").hide();
-        $("input").keyup(function(){ // Residential Calculations
+        $("input").keyup(function(){ // Residential Calculations : Done
             averageOfApartmentsPerFloor = Math.ceil(numberOfApartments / numberOfFloors); // 15 = 300 / 20)
                 // console.log("numberOfFloors in formula is:", numberOfFloors);
                 // console.log("numberOfApartments in formula is:", numberOfApartments);
@@ -89,11 +87,11 @@ $(function() { // ←←← Link Fields With Radio Buttons
                 // console.log("numberOfElevators in formula is:", numberOfElevators);
             numberOfColumns = Math.ceil(numberOfFloors / 20); // 1 = 20 / 20
                 // console.log("numberOfFloors in formula is:", numberOfFloors);
-                console.log("numberOfColumns in formula is:", numberOfColumns);
+                // console.log("numberOfColumns in formula is:", numberOfColumns);
             totalNumberOfElevators = Math.ceil(numberOfColumns * numberOfElevators); // 3 = 1 * 3
                 // console.log("numberOfElevators in formula is:", numberOfElevators);
                 // console.log("numberOfColumns in formula is:", numberOfColumns);
-                console.log("totalNumberOfElevators in formula is:", totalNumberOfElevators);
+                // console.log("totalNumberOfElevators in formula is:", totalNumberOfElevators);
             $("output[name=elevator-amount]").val(totalNumberOfElevators);
                 // console.log("totalNumberOfElevators in field is:", totalNumberOfElevators);  
         });  
@@ -170,32 +168,88 @@ $(function() { // ←←← Link Fields With Radio Buttons
     }});       
         })
 
-        
-
-    
-// ESTIMATE CALCULATION FUNCTIONS 
-    // Variables Definitions
-    // var elevatorAmount = $("input[name=elevator-amount]").val()
-    // var elevatorUnitPrice = $("input[name=elevator-unit-price]").val()
-    // var elevatorTotalPrice = $("input[name=elevator-total-price]").val()
-    // var installationFees = $("input[name=installation-fees]").val()
-    // var finalPrice = $("input[name=final-price]").val()
+     
 
 
 
-
-// PRODUCTS LINE FUNCTIONS --------------------------------
-$(function() { // Elevator Unit Price & Installation Fees --------------------------------
+// PRODUCTS LINE FUNCTIONS
+$(function() { // Elevator Unit Price & Installation Fees
+    var elevatorUnitPrice = 0;
+    var elevatorAmount = 0;
+    var elevatorTotalPrice = 0;
+    var installationFeesPercentage = 0;
+    var installationFees = 0;
+    var finalPrice = 0;
     $("input[name='product-line-radio']").click(function() {
-      if ($("#standard").is(":checked")) {
-        var elevatorUnitPrice = $("output[name=elevator-unit-price]").val(7565);
-        var installationFeesPercentage = $("output[name=installation-fees]").val(0.1);
-    } if ($("#premium").is(":checked")) {
-        var elevatorUnitPrice = $("output[name=elevator-unit-price]").val(12345);
-        var installationFeesPercentage = $("output[name=installation-fees]").val(0.13);           
-    } if ($("#excelium").is(":checked")) {
-        var elevatorUnitPrice = $("output[name=elevator-unit-price]").val(15400);
-        var installationFeesPercentage = $("output[name=installation-fees]").val(0.16);           
+        if ($("#standard").is(":checked")) { // Done
+            // $("output").keyup(function(){
+                elevatorUnitPrice = 7565;
+                $("output[name=elevator-unit-price]").val(elevatorUnitPrice);
+                elevatorAmount = $("output[name=elevator-amount]").val();
+                    // console.log("elevatorAmount in field is:", elevatorAmount);
+                elevatorTotalPrice = elevatorUnitPrice * elevatorAmount;
+                    // console.log("elevatorUnitPrice in field is:", elevatorUnitPrice);
+                    // console.log("elevatorAmount in field is:", elevatorAmount);
+                    // console.log("elevatorTotalPrice in field is:", elevatorTotalPrice);
+                $("output[name=elevator-total-price]").val(elevatorTotalPrice);
+                installationFeesPercentage = 0.1;
+                installationFees = elevatorTotalPrice * installationFeesPercentage;
+                    // console.log("installationFeesPercentage is:", installationFeesPercentage);
+                    // console.log("elevatorTotalPrice in field is:", elevatorTotalPrice);
+                    // console.log("installationFees in field is:", installationFees);
+                $("output[name=installation-fees]").val(installationFees);
+                finalPrice = +elevatorTotalPrice + +installationFees;
+                    // console.log("elevatorTotalPrice is:", elevatorTotalPrice);
+                    // console.log("installationFees in field is:", installationFees);
+                    // console.log("finalPrice in field is:", finalPrice);
+                $("output[name=final-price]").val(finalPrice);
+            // });
+    }   if ($("#premium").is(":checked")) { // Done
+            // $("output").keyup(function(){
+                elevatorUnitPrice = 12345;
+                $("output[name=elevator-unit-price]").val(elevatorUnitPrice);
+                elevatorAmount = $("output[name=elevator-amount]").val();
+                    // console.log("elevatorAmount in field is:", elevatorAmount);
+                elevatorTotalPrice = elevatorUnitPrice * elevatorAmount;
+                    // console.log("elevatorUnitPrice in field is:", elevatorUnitPrice);
+                    // console.log("elevatorAmount in field is:", elevatorAmount);
+                    // console.log("elevatorTotalPrice in field is:", elevatorTotalPrice);
+                $("output[name=elevator-total-price]").val(elevatorTotalPrice);
+                installationFeesPercentage = 0.13;
+                installationFees = elevatorTotalPrice * installationFeesPercentage;
+                    // console.log("installationFeesPercentage is:", installationFeesPercentage);
+                    // console.log("elevatorTotalPrice in field is:", elevatorTotalPrice);
+                    // console.log("installationFees in field is:", installationFees);
+                $("output[name=installation-fees]").val(installationFees);
+                finalPrice = +elevatorTotalPrice + +installationFees;
+                    // console.log("elevatorTotalPrice is:", elevatorTotalPrice);
+                    // console.log("installationFees in field is:", installationFees);
+                    // console.log("finalPrice in field is:", finalPrice);
+                $("output[name=final-price]").val(finalPrice);
+            // });    
+    }   if ($("#excelium").is(":checked")) { // Done
+            // $("output").keyup(function(){
+                elevatorUnitPrice = 15400;
+                $("output[name=elevator-unit-price]").val(elevatorUnitPrice);
+                elevatorAmount = $("output[name=elevator-amount]").val();
+                    // console.log("elevatorAmount in field is:", elevatorAmount);
+                elevatorTotalPrice = elevatorUnitPrice * elevatorAmount;
+                    // console.log("elevatorUnitPrice in field is:", elevatorUnitPrice);
+                    // console.log("elevatorAmount in field is:", elevatorAmount);
+                    // console.log("elevatorTotalPrice in field is:", elevatorTotalPrice);
+                $("output[name=elevator-total-price]").val(elevatorTotalPrice);
+                installationFeesPercentage = 0.16;
+                installationFees = elevatorTotalPrice * installationFeesPercentage;
+                    // console.log("installationFeesPercentage is:", installationFeesPercentage);
+                    // console.log("elevatorTotalPrice in field is:", elevatorTotalPrice);
+                    // console.log("installationFees in field is:", installationFees);
+                $("output[name=installation-fees]").val(installationFees);
+                finalPrice = +elevatorTotalPrice + +installationFees;
+                    // console.log("elevatorTotalPrice is:", elevatorTotalPrice);
+                    // console.log("installationFees in field is:", installationFees);
+                    // console.log("finalPrice in field is:", finalPrice);
+                $("output[name=final-price]").val(finalPrice);
+            // });        
     }
-})
+    });
 });
