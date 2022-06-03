@@ -230,7 +230,7 @@ $(function() { // Elevator Unit Price & Installation Fees
     }   if ($("#excelium").is(":checked")) { // Done
             // $("output").keyup(function(){
                 elevatorUnitPrice = 15400;
-                $("output[name=elevator-unit-price]").val(elevatorUnitPrice);
+                $("output[name=elevator-unit-price]").val(elevatorUnitPrice).toLocaleString('en', { style:'currency', currency:'USD'});
                 elevatorAmount = $("output[name=elevator-amount]").val();
                     // console.log("elevatorAmount in field is:", elevatorAmount);
                 elevatorTotalPrice = elevatorUnitPrice * elevatorAmount;
@@ -249,7 +249,9 @@ $(function() { // Elevator Unit Price & Installation Fees
                     // console.log("installationFees in field is:", installationFees);
                     // console.log("finalPrice in field is:", finalPrice);
                 $("output[name=final-price]").val(finalPrice);
+                $("output[name=final-price]").toLocaleString('en-us', { style:'currency', currency:'USD'});
             // });        
     }
     });
+    $("output[name=elevator-unit-price]").toLocaleString('en', { style:'currency', currency:'USD'});
 });
