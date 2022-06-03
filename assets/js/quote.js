@@ -1,6 +1,8 @@
 /**	QUOTE FORM
 *************************************************** **/
 
+
+
 // BUILDING TYPES FUNCTIONS --------------------------------
 $(function() { // ←←← Link Fields With Radio Buttons
     var numberOfApartments = 0;

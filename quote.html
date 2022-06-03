@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Rocket Elevators - Elevate Safety, Speed and Style</title>
-		<meta name="description" content="" />
-		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+		<meta name="description" content="Rocket Elevators Official Website" />
+		<meta name="Author" content="Monique Payment-Boulanger [www.monichan.com]" />
+		<meta name="keywords" content="elevator, shat, cage, elevator rocket, quote, corporate, residential, awards, Ellies, ellies">
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
@@ -27,12 +28,6 @@
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/color_scheme/darkblue.css" rel="stylesheet" type="text/css" id="color_scheme" />
-
-		<!-- RESULTS FIELDS SCRIPTS	-->
-		<!-- <script> 
-			("[class=results-field]").toLocaleString('en');
-		</script>        -->
-		
 	</head>
 
 	<!--
@@ -99,7 +94,7 @@
 						</button>
 
 						<!-- Logo -->
-						<a class="logo float-left" href="index.html">
+						<a class="logo float-left scrollTo" href="#top">
 							<img src="assets/images/Logos/RE_Logo_Transparent.png" alt="" />
 						</a>
 
@@ -120,32 +115,32 @@
 								-->
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 									<li class="active"><!-- HOME -->
-										<a href="index.html">
+										<a href="#top">
 											HOME
 										</a>
 									</li>
 									<li><!-- SERVICES -->
-										<a href="index.html#services">
+										<a href="#services">
 											SERVICES
 										</a>
 									</li>
 									<li><!-- PORTFOLIO -->
-										<a href="index.html#portfolio">
+										<a href="#portfolio">
 											PORTFOLIO
 										</a>
 									</li>
 									<li><!-- NEWS -->
-										<a href="index.html#news">
+										<a href="#news">
 											NEWS
 										</a>
 									</li>							
 									<li><!-- CLIENTS -->
-										<a href="index.html#clients">
+										<a href="#clients">
 											CLIENTS
 										</a>
 									</li>									
 									<li><!-- CONTACT -->
-										<a href="#contact">
+										<a href="#quote-contact">
 											CONTACT
 										</a>
 									</li>
@@ -163,83 +158,97 @@
 
 
 
-
-			<header class="text-center mb-80">
-				<h2>Request a Quote</h2>
-				<p class="lead font-lato">The best price for your project.</p>
-				<hr />
-			</header>
-
+			
+			<section>
+				<div class="container">
+					<header class="text-center mb-60">
+						<h2>Request a Quote</h2>
+						<p class="lead font-lato">The best price for your project.</p>
+					</header>					
+				</div>
+			</section>
 
 
 	
-			
-			<!-- Quote FOrm -->
-			
-			<!-- Building Type Radio Buttons-->
-		<p>
-			<legend>Please select the building type:</legend>
 
-			<ul id="building-type">
-				<div> 
-					<input id='residential' type="radio" name="building-type-radio" value="residential"> Residential</div>
-				<div>					
-					<input id='commercial' type="radio" name="building-type-radio" value="commercial"> Commercial</div>
-				<div>
-					<input id='corporate' type="radio" name="building-type-radio" value="corporate"> Corporate</div>
-				<div>
-					<input id='hybrid' type="radio" name="building-type-radio" value="hybrid"> Hybrid</div>
-			</ul>
-		</p>
+				
+			<!-- Quote FOrm -->
+
+			<!-- Building Type Radio Buttons-->
+			<section id="building-radio-buttons">
+				<div class="container">
+					<div class="text-center">
+						<legend>Step 1. Please select the building type:</legend>
+
+						<ul id="building-type">
+							<div> 
+								<input id='residential' type="radio" name="building-type-radio" value="residential"> Residential</div>
+							<div>					
+								<input id='commercial' type="radio" name="building-type-radio" value="commercial"> Commercial</div>
+							<div>
+								<input id='corporate' type="radio" name="building-type-radio" value="corporate"> Corporate</div>
+							<div>
+								<input id='hybrid' type="radio" name="building-type-radio" value="hybrid"> Hybrid</div>
+						</ul>
+					</div>
+				</div>
+			</section>
 			<!-- Building Type Radio Buttons -->
 
 
 
 			<!-- Building Type Fields -->
-			<div id="number-of-apartments">
-				<label>Number of Apartments</label>
-				<input type="number" name="number-of-apartments" step="1" min="1" value="">				
-			</div>
-			
-			<div id="number-of-floors">
-				<label>Number of Floors (excluding basements)</label>
-				<input type="number" name="number-of-floors" step="1" min="2" value="">
-			</div>
-		
-			<div id="number-of-basements">
-				<label>Number of Basements</label>
-				<input type="number" name="number-of-basements" step="1" min="0" value="">
-			</div>
-		
-			<div id="number-of-companies">
-				<label>Number of Separate Tenant Companies</label>
-				<input type="number" name="number-of-companies" step="1" min="1" value="">
-			</div>
-			
-			<div id="number-of-corporations">
-				<label>Number of Distinct Businesses</label>
-				<input type="number" name="number-of-corporations" step="1" min="1" value="">
-			</div>
-			
-			<div id="number-of-elevators">
-				<label>Number of Elevator Cages To Be Deployed</label>
-				<input type="number" name="number-of-elevators" step="1" min="1" value="">
-			</div>
-			
-			<div id="number-of-parking-spots">
-				<label>Number of Parking Spaces Available</label>
-				<input type="number" name="number-of-parking-spots" step="1" min="1" value="">
-			</div>
-			
-			<div id="maximum-occupancy">
-				<label>Maximum Number of Occupants Per Floor</label>
-				<input type="number" name="maximum-occupancy" step="1" min="1" value="">
-			</div>
-			
-			<div id="business-hours">
-				<label>Business Hours (The number of hours of activity of the building per day.)</label>
-				<input type="number" name="business-hours" step="1" max="24" value="">
-			</div>
+			<section id="form">
+				<div class="container">
+					<div class="text-center">
+						<legend>Step 2. Please fill the information requested:</legend>
+						<div id="number-of-apartments">
+							<label>Number of Apartments</label>
+							<input type="number" name="number-of-apartments" step="1" min="1" value="">				
+						</div>
+						
+						<div id="number-of-floors">
+							<label>Number of Floors (excluding basements)</label>
+							<input type="number" name="number-of-floors" step="1" min="2" value="">
+						</div>
+					
+						<div id="number-of-basements">
+							<label>Number of Basements</label>
+							<input type="number" name="number-of-basements" step="1" min="0" value="">
+						</div>
+					
+						<div id="number-of-companies">
+							<label>Number of Separate Tenant Companies</label>
+							<input type="number" name="number-of-companies" step="1" min="1" value="">
+						</div>
+						
+						<div id="number-of-corporations">
+							<label>Number of Distinct Businesses</label>
+							<input type="number" name="number-of-corporations" step="1" min="1" value="">
+						</div>
+						
+						<div id="number-of-elevators">
+							<label>Number of Elevator Cages To Be Deployed</label>
+							<input type="number" name="number-of-elevators" step="1" min="1" value="">
+						</div>
+						
+						<div id="number-of-parking-spots">
+							<label>Number of Parking Spaces Available</label>
+							<input type="number" name="number-of-parking-spots" step="1" min="1" value="">
+						</div>
+						
+						<div id="maximum-occupancy">
+							<label>Maximum Number of Occupants Per Floor</label>
+							<input type="number" name="maximum-occupancy" step="1" min="1" value="">
+						</div>
+						
+						<div id="business-hours">
+							<label>Business Hours (The number of hours of activity of the building per day.)</label>
+							<input type="number" name="business-hours" step="1" max="24" value="">
+						</div>
+					</div>	
+				</div>	
+			</section>
 			<!-- Building Type Fields -->
 
 
@@ -247,19 +256,19 @@
 			<!-- Product Line Radio Buttons-->
 			<legend>Please select the product line of your choice:</legend>
 
-			<ul>
-				<div> 
-					<input id='standard' type="radio" name="product-line-radio" value="standard"> Standard</div>
-				<div>					
-					<input id='premium' type="radio" name="product-line-radio" value="premium"> Premium</div>
-				<div>
-					<input id='excelium' type="radio" name="product-line-radio" value="excelium"> Excelium</div>
-			</ul>
+				<ul>
+					<div> 
+						<input id='standard' type="radio" name="product-line-radio" value="standard"> Standard</div>
+					<div>					
+						<input id='premium' type="radio" name="product-line-radio" value="premium"> Premium</div>
+					<div>
+						<input id='excelium' type="radio" name="product-line-radio" value="excelium"> Excelium</div>
+				</ul>
 			<!-- Product Line Radio Buttons -->
 
 
 
-			<!-- Results Fields --> <!-- ↓↓↓　À modifier plus tard pour le format ↓↓↓ (onchange="JavaScript:commaFormat(this.value)") (value="200200") -->
+			<!-- Results Fields --> <!--
 			<div id="elevator-amount">
 				<label>Amount of Elevators Needed</label>
 				<output type="number" name="elevator-amount" step="1" value="">
@@ -290,6 +299,189 @@
 
 
 
+			<!-- CONTACT -->
+			<section id="contact">
+				<div class="container">
+
+					<header class="text-center mb-60">
+						<h2>Contact Us</h2>
+						<p class="lead font-lato">Please do not hesitate to contact us!</p>
+						<hr />
+					</header>
+
+
+					<div class="row">
+
+						<!-- FORM -->
+						<div class="col-md-8 col-sm-8">
+
+							<h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
+
+							
+							<!--
+								MESSAGES
+								
+									How it works?
+									The form data is posted to php/contact.php where the fields are verified!
+									php.contact.php will redirect back here and will add a hash to the end of the URL:
+										#alert_success 		= email sent
+										#alert_failed		= email not sent - internal server error (404 error or SMTP problem)
+										#alert_mandatory	= email not sent - required fields empty
+										Hashes are handled by assets/js/contact.js
+
+									Form data: required to be an array. Example:
+										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
+										Also, add `required` to input fields if is a mandatory field. 
+										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
+
+									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
+												 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
+
+									WARNING! Do not change the `email` and `name`!
+												contact[name][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
+												contact[email][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
+							-->
+
+							<!-- Alert Success -->
+							<div id="alert_success" class="alert alert-success mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Thank You!</strong> Your message successfully sent!
+							</div><!-- /Alert Success -->
+
+
+							<!-- Alert Failed -->
+							<div id="alert_failed" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>[SMTP] Error!</strong> Internal server error!
+							</div><!-- /Alert Failed -->
+
+
+							<!-- Alert Mandatory -->
+							<div id="alert_mandatory" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
+							</div><!-- /Alert Mandatory -->
+
+
+							<form action="php/contact.php" method="post" enctype="multipart/form-data">
+								<fieldset>
+									<input type="hidden" name="action" value="contact_send" />
+
+									<div class="row">
+											<div class="col-md-4">
+												<label for="contact:name">Contact Full Name *</label>
+												<input required type="text" value="" class="form-control" name="contact[name][required]" id="name">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:company_name">Business Name</label>
+												<input required type="text" value="" class="form-control" name="contact[company_name]" id="company_name">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:email">E-mail *</label>
+												<input required type="email" value="" class="form-control" name="contact[email][required]" id="email">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:phone">Phone Number</label>
+												<input type="text" value="" class="form-control" name="contact[phone]" id="phone">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:project_name">Project Name</label>
+												<input required type="text" value="" class="form-control" name="contact[project_name]" id="project_name">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:project_description">Project Description</label>
+												<input required type="text" value="" class="form-control" name="contact[project_description]" id="project_description">
+											</div>
+									</div>
+									<div class="row">
+											<div class="col-md-8">
+												<label for="contact:subject">Subject *</label>
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
+											</div>
+											<div class="col-md-4">
+												<label for="contact_department">Department</label>
+												<select class="form-control pointer" name="contact[department]" id="department">
+													<option value="">--- Select ---</option>
+													<option value="Commercial">Commercial</option>
+													<option value="Corporate">Corporate</option>
+													<option value="Hybrid">Hybrid</option>
+													<option value="Residential">Residential</option>
+												</select>
+											</div>
+									</div>
+									<div class="row">
+											<div class="col-md-12">
+												<label for="contact:message">Message *</label>
+												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="message"></textarea>
+											</div>
+									</div>
+									<div class="row">
+											<div class="col-md-12">
+												<label for="contact:attachment">File Attachment</label>
+
+												<!-- custom file upload -->
+												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="attachment" data-btn-text="Select a File" />
+												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
+
+											</div>
+									</div>
+
+								</fieldset>
+
+								<div class="row">
+									<div class="col-md-12">
+										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
+									</div>
+								</div>
+							</form>
+
+						</div>
+						<!-- /FORM -->
+
+
+						<!-- INFO -->
+						<div class="col-md-4 col-sm-4">
+
+							<h2>Visit Us</h2>
+
+							<!-- 
+							Available heights
+								h-100
+								h-150
+								h-200
+								h-250
+								h-300
+								h-350
+								h-400
+								h-450
+								h-500
+								h-550
+								h-600
+							-->
+							 
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.407874999146!2d-71.2918385!3d46.8356601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb897e960cb92d3%3A0x2c6e9be6262c3664!2s1165%20Bd%20Lebourgneuf%20%23300%2C%20Qu%C3%A9bec%2C%20QC%20G2K%202C9%2C%20Canada!5e0!3m2!1sen!2sjp!4v1653662072476!5m2!1sen!2sjp" width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							
+							<hr />
+
+							<p>
+								<span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> 1165 Bd Lebourgneuf #300, Québec, QC G2K 2C9</span>
+								<span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a href="tel:(418) 555-1234">(418) 555-1234</a></span>
+								<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:info@codeboxx.biz">info@codeboxx.biz</a></span>
+							</p>
+
+						</div>
+						<!-- /INFO -->
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /CONTACT -->
+
+
+
+
+			
 
 			<!-- FOOTER -->
 			<footer id="footer">
@@ -346,7 +538,7 @@
 							<li>&bull;</li>
 							<li><a>Privacy</a></li>
 						</ul>
-						&copy; All Rights Reserved, Company LTD
+						&copy; All Rights Reserved, Rocket Elevators LTD
 					</div>
 				</div>
 
@@ -358,7 +550,7 @@
 
 
 		<!-- SCROLL TO TOP -->
-		<a href="#" id="toTop"></a>
+		<a href="#top" id="toTop"></a>
 
 
 		<!-- PRELOADER -->
@@ -384,5 +576,13 @@
 
 		<!-- PAGELEVEL SCRIPTS -->
 		<script src="assets/js/contact.js"></script>
+
+		<!-- 
+			GMAP.JS 
+			http://hpneo.github.io/gmaps/
+		-->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
+		<script src="assets/plugins/gmaps.js"></script>
+		
 	</body>
 </html>
