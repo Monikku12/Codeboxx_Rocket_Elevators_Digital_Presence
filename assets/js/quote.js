@@ -17,6 +17,7 @@ $(function() { // ←←← Link Fields With Radio Buttons
     var numberOfColumns = 0;
     var numberOfElevatorsPerColumn = 0;
     var totalNumberOfElevators = 0;
+    var averageOfApartmentsPerFloor = 0;
     // Retrieve value from quote form ↓↓↓
     $("#number-of-apartments").keyup(function(){ 
         numberOfApartments = $("input[name=number-of-apartments]").val();
@@ -79,7 +80,11 @@ $(function() { // ←←← Link Fields With Radio Buttons
         $("#number-of-corporations").hide();
         $("#maximum-occupancy").hide();
         $("#business-hours").hide();
-    } if ($("#commercial").is(":checked")) {
+        averageOfApartmentsPerFloor = Math.ceil(numberOfApartments / numberOfFloors);
+            console.log("numberOfFloors in formula is:", numberOfFloors);
+            console.log("numberOfApartments in formula is:", numberOfApartments);
+            console.log("averageOfApartmentsPerFloor in formula is:", averageOfApartmentsPerFloor);
+    } if ($("#commercial").is(":checked")) { // Done
         $("#number-of-companies").show();
         $("#number-of-floors").show();
         $("#number-of-basements").show();
@@ -89,7 +94,7 @@ $(function() { // ←←← Link Fields With Radio Buttons
         $("#number-of-corporations").hide();
         $("#maximum-occupancy").hide();
         $("#business-hours").hide();
-    } if ($("#corporate").is(":checked")) {
+    } if ($("#corporate").is(":checked")) { // Done
         $("#number-of-corporations").show();
         $("#number-of-floors").show();
         $("#number-of-basements").show();
@@ -99,7 +104,27 @@ $(function() { // ←←← Link Fields With Radio Buttons
         $("#number-of-companies").hide();
         $("#number-of-elevators").hide();
         $("#business-hours").hide();
-    } if ($("#hybrid").is(":checked")) {
+        $("input").keyup(function(){ // Corporate Calculations
+            totalNumberOfOccupants = numberTotalOfFloors * numberOfCorporations;
+                console.log("numberOfCorporations in formula is:", numberOfCorporations);
+                console.log("numberTotalOfFloors in formula is:", numberTotalOfFloors);
+                console.log("totalNumberOfOccupants in formula is:", totalNumberOfOccupants);
+            numberOfElevators = Math.ceil(totalNumberOfOccupants / 1000);
+                // console.log("numberOfElevators in formula is:", numberOfElevators);
+            numberOfColumns = Math.ceil(numberTotalOfFloors / 20);
+                // console.log("numberOfColumns in formula is:", numberOfColumns);
+            numberOfElevatorsPerColumn = Math.ceil(numberOfElevators / numberOfColumns);
+                console.log("numberOfElevators in formula is:", numberOfElevators);
+                // console.log("numberOfColumns in formula is:", numberOfColumns);
+                // console.log("numberOfElevatorsPerColumn in formula is:", numberOfElevatorsPerColumn);
+            totalNumberOfElevators = numberOfElevatorsPerColumn * numberOfColumns;
+                console.log("numberOfColumns in formula is:", numberOfColumns);
+                console.log("numberOfElevatorsPerColumn in formula is:", numberOfElevatorsPerColumn);
+                console.log("totalNumberOfElevators in formula is:", totalNumberOfElevators);
+            $("output[name=elevator-amount]").val(totalNumberOfElevators);
+                console.log("totalNumberOfElevators in field is:", totalNumberOfElevators);
+            });        
+    } if ($("#hybrid").is(":checked")) { // Done
         $("#number-of-companies").show();
         $("#number-of-floors").show();
         $("#number-of-basements").show();
@@ -109,7 +134,7 @@ $(function() { // ←←← Link Fields With Radio Buttons
         $("#number-of-corporations").hide();
         $("#number-of-elevators").hide();
         $("#number-of-apartments").hide();
-        $("input").keyup(function(){ // Hybrid & Corporate Calculations
+        $("input").keyup(function(){ // Hybrid Calculations
             totalNumberOfOccupants = numberTotalOfFloors * numberOfCompanies;
                 console.log("numberOfCompanies in formula is:", numberOfCompanies);
                 console.log("numberTotalOfFloors in formula is:", numberTotalOfFloors);
