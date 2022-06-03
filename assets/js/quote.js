@@ -182,7 +182,7 @@ $(function() { // Elevator Unit Price & Installation Fees
     var finalPrice = 0;
     $("input[name='product-line-radio']").click(function() {
         if ($("#standard").is(":checked")) { // Done
-            // $("output").keyup(function(){
+            // $("iput").keyup(function(){
                 elevatorUnitPrice = 7565;
                 $("output[name=elevator-unit-price]").val(elevatorUnitPrice);
                 elevatorAmount = $("output[name=elevator-amount]").val();
