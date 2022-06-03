@@ -14,7 +14,9 @@ $(function() { // ←←← Link Fields With Radio Buttons
     var businessHours = 0;
     var numberTotalOfFloors = 0;
     var totalNumberOfOccupants = 0;
-    var numberOfElevatorColumns = 0;
+    var numberOfColumns = 0;
+    var numberOfElevatorsPerColumn = 0;
+    var totalNumberOfElevators = 0;
     // Retrieve value from quote form ↓↓↓
     $("#number-of-apartments").keyup(function(){ 
         numberOfApartments = $("input[name=number-of-apartments]").val();
@@ -23,11 +25,12 @@ $(function() { // ←←← Link Fields With Radio Buttons
     $("#number-of-floors").keyup(function(){            
         numberOfFloors = $("input[name=number-of-floors]").val();
         console.log("number-of-floors is:", numberOfFloors); // OK
+        // console.log("numberOfFloors is:", numberOfFloors);
     });
     $("#number-of-basements").keyup(function(){            
         numberOfBasements = $("input[name=number-of-basements]").val();
         console.log("number-of-basements is:", numberOfBasements); // OK
-        console.log("numberOfBasements is:", numberOfBasements) // OK
+        // console.log("numberOfBasements is:", numberOfBasements); // OK
     });
     $("#number-of-companies").keyup(function(){            
         numberOfCompanies = $("input[name=number-of-companies]").val();
@@ -52,9 +55,17 @@ $(function() { // ←←← Link Fields With Radio Buttons
         businessHours = $("input[name=business-hours]").val();           
         console.log("business-hours is:", businessHours);
     });
-    $("#number-of-floors","#number-of-basements").keyup(function(){
-        numberTotalOfFloors = +numberOfFloors + +numberOfBasements;
-        console.log("numberTotalOfFloors is:", numberTotalOfFloors);
+    $("#number-of-basements").keyup(function(){        
+        console.log("numberOfBasements is:", numberOfBasements);        
+        numberTotalOfFloors = (numberOfFloors + numberOfBasements);
+        console.log("numberOfFloors is:", numberOfFloors);
+        console.log("numberTotalOfFloors is:", numberTotalOfFloors);        
+    });
+    $("#number-of-floors").keyup(function(){    
+        console.log("numberOfFloors is:", numberOfFloors);
+        numberTotalOfFloors = (numberOfFloors + numberOfBasements);
+        console.log("numberOfBasements is:", numberOfBasements);
+        console.log("numberTotalOfFloors is:", numberTotalOfFloors);        
     });
        // Radio buttons Effects ↓↓↓
     $("input[name='building-type-radio']").click(function() {
@@ -103,14 +114,20 @@ $(function() { // ←←← Link Fields With Radio Buttons
                 console.log("numberOfCompanies in formula is:", numberOfCompanies);
                 console.log("numberTotalOfFloors in formula is:", numberTotalOfFloors);
                 console.log("totalNumberOfOccupants in formula is:", totalNumberOfOccupants);
-            numberOfElevators = totalNumberOfOccupants / 1000;
+            numberOfElevators = Math.ceil(totalNumberOfOccupants / 1000);
+                // console.log("numberOfElevators in formula is:", numberOfElevators);
+            numberOfColumns = Math.ceil(numberTotalOfFloors / 20);
+                // console.log("numberOfColumns in formula is:", numberOfColumns);
+            numberOfElevatorsPerColumn = Math.ceil(numberOfElevators / numberOfColumns);
                 console.log("numberOfElevators in formula is:", numberOfElevators);
-            $("output[name=elevator-amount]").val(numberOfElevators);
-                console.log("numberOfElevators in field is:", numberOfElevators);
-            numberOfElevatorColumns = numberTotalOfFloors / 20;
-                console.log("numberOfElevatorColumns in formula is:", numberOfElevatorColumns);
-        
-        
+                // console.log("numberOfColumns in formula is:", numberOfColumns);
+                // console.log("numberOfElevatorsPerColumn in formula is:", numberOfElevatorsPerColumn);
+            totalNumberOfElevators = numberOfElevatorsPerColumn * numberOfColumns;
+                console.log("numberOfColumns in formula is:", numberOfColumns);
+                console.log("numberOfElevatorsPerColumn in formula is:", numberOfElevatorsPerColumn);
+                console.log("totalNumberOfElevators in formula is:", totalNumberOfElevators);
+            $("output[name=elevator-amount]").val(totalNumberOfElevators);
+                console.log("totalNumberOfElevators in field is:", totalNumberOfElevators);
             });        
     }});       
         })
