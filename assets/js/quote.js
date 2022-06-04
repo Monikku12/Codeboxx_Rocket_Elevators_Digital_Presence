@@ -1,22 +1,34 @@
-/**	QUOTE FORM
-*************************************************** **/
+/**********************	QUOTE FORM **********************/
 
 
 
 // BUILDING TYPES FUNCTIONS --------------------------------
 $(function() { // ←←← Link Fields With Radio Buttons
-    var numberOfApartments = 0;
-    var numberOfBasements = 0;
-    var numberOfCompanies = 0;
-    var numberOfCorporations = 0;
-    var numberOfElevators = 0;
-    var numberOfFloors = 0;
-    var numberTotalOfFloors = 0;
-    var totalNumberOfOccupants = 0;
-    var numberOfColumns = 0;
-    var numberOfElevatorsPerColumn = 0;
-    var totalNumberOfElevators = 0;
-    var averageOfApartmentsPerFloor = 0;
+    $("#step2").hide();
+    $("#arrows").hide();
+    $("#step3").hide();
+    $("#step4").hide();
+    $("#number-of-apartments").hide();
+    $("#number-of-floors").hide();
+    $("#number-of-basements").hide();
+    $("#number-of-companies").hide();
+    $("#number-of-parking-spots").hide();
+    $("#number-of-elevators").hide();
+    $("#number-of-corporations").hide();
+    $("#maximum-occupancy").hide();
+    $("#business-hours").hide();
+    var numberOfApartments;
+    var numberOfBasements;
+    var numberOfCompanies;
+    var numberOfCorporations;
+    var numberOfElevators;
+    var numberOfFloors;
+    var numberTotalOfFloors;
+    var totalNumberOfOccupants;
+    var numberOfColumns;
+    var numberOfElevatorsPerColumn;
+    var totalNumberOfElevators;
+    var averageOfApartmentsPerFloor;
     // Retrieve value from quote form ↓↓↓
     $("#number-of-apartments").keyup(function(){
         numberOfApartments = $("input[name=number-of-apartments]").val();
@@ -53,6 +65,8 @@ $(function() { // ←←← Link Fields With Radio Buttons
     });
        // Radio buttons Effects ↓↓↓
     $("input[name='building-type-radio']").click(function() {
+        $("#step2").show();
+        $("#arrows").show();
       if ($("#residential").is(":checked")) {
         $("#number-of-apartments").show();
         $("#number-of-floors").show();
@@ -69,6 +83,7 @@ $(function() { // ←←← Link Fields With Radio Buttons
             numberOfColumns = Math.ceil(numberOfFloors / 20);
             totalNumberOfElevators = Math.ceil(numberOfColumns * numberOfElevators);
             $("output[name=elevator-amount]").val(totalNumberOfElevators);
+            $("#step3").show();
         });
     } if ($("#commercial").is(":checked")) {
         $("#number-of-companies").show();
@@ -80,6 +95,9 @@ $(function() { // ←←← Link Fields With Radio Buttons
         $("#number-of-corporations").hide();
         $("#maximum-occupancy").hide();
         $("#business-hours").hide();
+        $("input").keyup(function(){
+            $("#step3").show();
+            });
     } if ($("#corporate").is(":checked")) {
         $("#number-of-corporations").show();
         $("#number-of-floors").show();
@@ -97,6 +115,7 @@ $(function() { // ←←← Link Fields With Radio Buttons
             numberOfElevatorsPerColumn = Math.ceil(numberOfElevators / numberOfColumns);
             totalNumberOfElevators = numberOfElevatorsPerColumn * numberOfColumns;
             $("output[name=elevator-amount]").val(totalNumberOfElevators);
+            $("#step3").show();
             });
     } if ($("#hybrid").is(":checked")) {
         $("#number-of-companies").show();
@@ -115,13 +134,24 @@ $(function() { // ←←← Link Fields With Radio Buttons
             numberOfElevatorsPerColumn = Math.ceil(numberOfElevators / numberOfColumns);
             totalNumberOfElevators = numberOfElevatorsPerColumn * numberOfColumns;
             $("output[name=elevator-amount]").val(totalNumberOfElevators);
+            $("#step3").show();
         });
-    }});
+    }
+    // $("totalNumberOfElevators.val()").change(function() {
+    //     $("#step3").show();
+    // });
+});
 })
 
 // PRODUCTS LINE FUNCTIONS
 $("input").keyup(function(){
     $(function() { // Elevator Unit Price & Installation Fees
+        $("output[name=elevator-amount]").css("background-color","#7FDBFF");
+        $("output[name=elevator-unit-price]").css("background-color","#7FDBFF");
+        $("output[name=elevator-total-price]").css("background-color","#7FDBFF");
+        $("output[name=installation-fees]").css("background-color","#7FDBFF");
+        $("output[name=final-price]").css("background-color","#7FDBFF");
+        $("output[name=elevator-amount]").css("background-color","#7FDBFF",);
         var elevatorUnitPrice = 0;
         var elevatorAmount = 0;
         var elevatorTotalPrice = 0;
@@ -129,6 +159,7 @@ $("input").keyup(function(){
         var installationFees = 0;
         var finalPrice = 0;
         $("input[name='product-line-radio']").click(function() {
+            $("#step4").show();
             if ($("#standard").is(":checked")) {
                     elevatorUnitPrice = 7565;
                     $("output[name=elevator-unit-price]").val(elevatorUnitPrice.toLocaleString("en-us",{minimumFractionDigits: 2, maximumFractionDigits: 2}) + " $");

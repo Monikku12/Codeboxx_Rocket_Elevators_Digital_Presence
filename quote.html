@@ -175,11 +175,10 @@
 			<!-- Quote FOrm -->
 
 			<!-- Building Type Radio Buttons-->
-			<section id="building-radio-buttons">
+			<section>
 				<div class="container">
 					<div class="text-center">
-						<legend>Step 1. Please select the building type:</legend>
-
+						<legend id="step1">Step 1. Please select the building type:</legend>
 						<ul id="building-type">
 							<div> 
 								<input id='residential' type="radio" name="building-type-radio" value="residential"> Residential</div>
@@ -190,6 +189,7 @@
 							<div>
 								<input id='hybrid' type="radio" name="building-type-radio" value="hybrid"> Hybrid</div>
 						</ul>
+						<legend>⇩　⇩　⇩</legend>
 					</div>
 				</div>
 			</section>
@@ -198,10 +198,11 @@
 
 
 			<!-- Building Type Fields -->
-			<section id="form">
+			<section>
 				<div class="container">
 					<div class="text-center">
-						<legend>Step 2. Please fill the information requested:</legend>
+						<legend id="step2">Step 2. Please fill all the fields to get an accurate quote:</legend>
+						
 						<div id="number-of-apartments">
 							<label>Number of Apartments</label>
 							<input type="number" name="number-of-apartments" step="1" min="1" value="">				
@@ -246,6 +247,7 @@
 							<label>Business Hours (The number of hours of activity of the building per day.)</label>
 							<input type="number" name="business-hours" step="1" max="24" value="">
 						</div>
+						<legend id="arrows">⇩　⇩　⇩</legend>
 					</div>	
 				</div>	
 			</section>
@@ -254,47 +256,61 @@
 
 
 			<!-- Product Line Radio Buttons-->
-			<legend>Please select the product line of your choice:</legend>
-
-				<ul>
-					<div> 
-						<input id='standard' type="radio" name="product-line-radio" value="standard"> Standard</div>
-					<div>					
-						<input id='premium' type="radio" name="product-line-radio" value="premium"> Premium</div>
-					<div>
-						<input id='excelium' type="radio" name="product-line-radio" value="excelium"> Excelium</div>
-				</ul>
+			<section id="step3">
+				<div class="container">
+					<div class="text-center">
+						<legend>Step 3. Please select the product line of your choice:</legend>
+						<ul>
+							<div> 
+								<input id='standard' type="radio" name="product-line-radio" value="standard"> Standard</div>
+							<div>					
+								<input id='premium' type="radio" name="product-line-radio" value="premium"> Premium</div>
+							<div>
+								<input id='excelium' type="radio" name="product-line-radio" value="excelium"> Excelium</div>
+						</ul>
+						<legend>⇩　⇩　⇩</legend>
+					</div>	
+				</div>	
+			</section>
 			<!-- Product Line Radio Buttons -->
 
 
 
-			<!-- Results Fields --> <!--
-			<div id="elevator-amount">
-				<label>Amount of Elevators Needed</label>
-				<output type="number" name="elevator-amount" step="1" value="">
-			</div>
-			
-			<div id="elevator-unit-price">
-				<label>Unit Price of Each Elevator</label>
-				<output type="number" name="elevator-unit-price" step="0.01" value="">
-			</div>
-
-			<div id="elevator-total-price">
-				<label>Total Price of the Elevators</label>
-				<output type="number" name="elevator-total-price" step="0.01" value="">
-			</div>
-
-			<div id="installation-fees">
-				<label>Installation Fees</label>
-				<output type="number" name="installation-fees" step="0.01" value="">
-			</div>
-
-			<div id="final-price">
-				<label>Final Price</label>
-				<output type="number" name="final-price" step="0.01" value="">
-			</div>
 			<!-- Results Fields -->
+			<section id="step4">
+				<div class="container">
+					<div class="text-center">
+						<legend>Step 4. Here is your quote!</legend>
+						<div id="elevator-amount">
+							<label>Amount of Elevators Needed</label>
+							<output type="number" name="elevator-amount" step="1" value="">
+						</div>
+						
+						<div id="elevator-unit-price">
+							<label>Unit Price of Each Elevator</label>
+							<output type="number" name="elevator-unit-price" step="0.01" value="">
+						</div>
 
+						<div id="elevator-total-price">
+							<label>Total Price of the Elevators</label>
+							<output type="number" name="elevator-total-price" step="0.01" value="">
+						</div>
+
+						<div id="installation-fees">
+							<label>Installation Fees</label>
+							<output type="number" name="installation-fees" step="0.01" value="">
+						</div>
+
+						<div id="final-price">
+							<label>Final Price</label>
+							<b>
+							<output strong type="number" name="final-price" step="0.01" value="">
+							</b>
+						</div>
+					</div>	
+				</div>	
+			</section>
+			<!-- Results Fields -->
 
 
 
