@@ -23,12 +23,15 @@ $(function() { // ←←← Link Fields With Radio Buttons
     var numberOfCorporations;
     var numberOfElevators;
     var numberOfFloors;
+    var maximumOccupancy;
+    var businessHours;
     var numberTotalOfFloors;
     var totalNumberOfOccupants;
     var numberOfColumns;
     var numberOfElevatorsPerColumn;
     var totalNumberOfElevators;
     var averageOfApartmentsPerFloor;
+
     // Retrieve value from quote form ↓↓↓
     $("#number-of-apartments").keyup(function(){
         numberOfApartments = $("input[name=number-of-apartments]").val();
@@ -109,7 +112,7 @@ $(function() { // ←←← Link Fields With Radio Buttons
         $("#number-of-elevators").hide();
         $("#business-hours").hide();
         $("input").keyup(function(){ // Corporate Calculations
-            totalNumberOfOccupants = numberTotalOfFloors * numberOfCorporations;
+            totalNumberOfOccupants = numberTotalOfFloors * maximumOccupancy;
             numberOfElevators = Math.ceil(totalNumberOfOccupants / 1000);
             numberOfColumns = Math.ceil(numberTotalOfFloors / 20);
             numberOfElevatorsPerColumn = Math.ceil(numberOfElevators / numberOfColumns);
@@ -128,7 +131,7 @@ $(function() { // ←←← Link Fields With Radio Buttons
         $("#number-of-elevators").hide();
         $("#number-of-apartments").hide();
         $("input").keyup(function(){ // Hybrid Calculations
-            totalNumberOfOccupants = numberTotalOfFloors * numberOfCompanies;
+            totalNumberOfOccupants = numberTotalOfFloors * maximumOccupancy;
             numberOfElevators = Math.ceil(totalNumberOfOccupants / 1000);
             numberOfColumns = Math.ceil(numberTotalOfFloors / 20);
             numberOfElevatorsPerColumn = Math.ceil(numberOfElevators / numberOfColumns);
@@ -185,7 +188,6 @@ $("input").keyup(function(){
         }   if ($("#excelium").is(":checked")) {
                     elevatorUnitPrice = 15400;
                     $("output[name=elevator-unit-price]").val(elevatorUnitPrice.toLocaleString("en-us",{minimumFractionDigits: 2, maximumFractionDigits: 2}) + " $");
-                        console.log("elevatorAmount in field is:", elevatorAmount);
                     elevatorTotalPrice = elevatorUnitPrice * elevatorAmount;
                     $("output[name=elevator-total-price]").val(elevatorTotalPrice.toLocaleString("en-us",{minimumFractionDigits: 2, maximumFractionDigits: 2}) + " $");
                     installationFeesPercentage = 0.16;
