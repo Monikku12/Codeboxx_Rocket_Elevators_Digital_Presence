@@ -20,7 +20,7 @@
 	padding-right:25px;
 
 	-webkit-border-radius: 0;
-	   -moz-border-radius: 0;
+		-moz-border-radius: 0;
 			border-radius: 0;
 }
 #topMain.nav-pills>li>a.dropdown-toggle:after {
